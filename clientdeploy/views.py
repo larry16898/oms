@@ -14,6 +14,6 @@ from django.shortcuts import render
 #    return Response(serializer.data)
 class ClientSettingList(APIView):
     def get(self, request, format=None):
-        client_settings = ClientSyncSetting.objects.all()
+        client_settings = ClientSyncSetting.objects.filter(is_active=True)
         serializer = ClientSyncSettingSerializer(client_settings, many=True)
         return Response(serializer.data)
