@@ -2,5 +2,5 @@
 /.vscode/
 __pycache__/
 project/settings/pro.py
-project/wsgi.py
+manage.py
 .idea
