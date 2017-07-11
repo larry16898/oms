@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'asserts',
     'rest_framework',
     'clientdeploy',
-    'account',
+    'accounts',
     'widget_tweaks',
 ]
 
