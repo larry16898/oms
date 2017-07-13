@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <!-- <link rel="icon" href="../../favicon.ico"> -->
 
-    <title>Login</title>
+    <title>运维管理系统登录</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -36,26 +36,25 @@
   <body>
 
     <div class="container">
+        {% if form.errors %}
+            <div class="alert alert-warning" role="alert">
+                {{ form.errors.as_text }}
+            </div>
+        {% endif %}
+        <form class="form-signin" action="{% url 'accounts:login' %}" method="post">
 
-        <form class="form-signin" action="{% url 'login' %}" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <!-- <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputUsername" class="sr-only">Account</label>
+        {% render_field form.username class+="form-control" id="inputUsername" placeholder="账号" %}
+
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
-        <label for="inputEmail" class="sr-only">Email address</label>
-        {% render_field form.username class+="form-control" id="inputEmail" placeholder="Email address" %}
-        {{ form.username.errors }}
-        <!--{{ form.username | add_class:"form-control" | attr:"autofocus" | attr:"placeholder:Email address" }}-->
-        <label for="inputPassword" class="sr-only">Password</label>
-        {% render_field form.password class+="form-control" id="inputPassword" placeholder="Password" %}
-        {{ form.password.errors }}
+        {% render_field form.password class+="form-control" id="inputPassword" placeholder="密码" %}
+
         <div class="checkbox">
-          <labl>
+          <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Log-in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
         {% csrf_token %}
       </form>
 

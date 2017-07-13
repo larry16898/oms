@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.views import LoginView, LogoutView
 from .forms import LoginForm
 from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def user_login(request):
@@ -24,11 +26,18 @@ def user_login(request):
     else:
         form = LoginForm()
 
-    return render(request, 'accounts/login.html', {'form':form})
+    return render(request, 'accounts/login.html', {'form': form})
 
+
+class MyLoginView(LoginView):
+    template_name = 'accounts/login.html'
+
+
+class MyLogoutView(LogoutView):
+    template_name = 'accounts/logout.html'
 
 
 @login_required
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html', {'section':'dashboard'})
+    return render(request, 'dashboard.html', {'section': 'dashboard'})
 
