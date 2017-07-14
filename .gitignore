@@ -1,6 +1,7 @@
 *.py[co]
 /.vscode/
 __pycache__/
+project/settings/base.py
 project/settings/pro.py
 manage.py
 .idea
