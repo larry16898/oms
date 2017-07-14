@@ -34,7 +34,8 @@ class MyLoginView(LoginView):
 
 
 class MyLogoutView(LogoutView):
-    template_name = 'accounts/logout.html'
+    template_name = 'accounts/login.html'
+    extra_context = {'form': LoginForm}
 
 
 @login_required
