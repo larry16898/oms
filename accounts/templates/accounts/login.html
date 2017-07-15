@@ -23,11 +23,6 @@
             <label for="inputPassword" class="sr-only">Password</label>
             {% render_field form.password class+="form-control" id="inputPassword" placeholder="密码" %}
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> 记住我
-                </label>
-            </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
             {% csrf_token %}
         </form>
