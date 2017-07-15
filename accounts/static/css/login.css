@@ -1,5 +1,5 @@
 body {
-  padding-top: 40px;
+  padding-top: 0px;
   padding-bottom: 40px;
   background-color: #eee;
 }
@@ -39,3 +39,6 @@ body {
   border-top-right-radius: 0;
 }
 
+#wrapper {
+  padding-left: 0px;
+}

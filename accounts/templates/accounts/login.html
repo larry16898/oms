@@ -1,6 +1,12 @@
-{% extends 'accounts/init_base.html' %}
+{% extends 'base1.html' %}
+{% load staticfiles %}
 {% load widget_tweaks %}
+
 {% block title %}运维管理系统登录{% endblock %}
+
+{% block head_extra_css %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
     <div class="container">

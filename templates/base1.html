@@ -1,0 +1,46 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>{% block title %}Simple Sidebar - Start Bootstrap Template{% endblock %}</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/simple-sidebar.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    {% block head_extra_css %}{% endblock %}
+
+</head>
+<body>
+<nav class="navbar navbar-default no-margin">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header fixed-brand">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
+            <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+        </button>
+        <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i> 运维管理系统</a>
+    </div><!-- navbar-header-->
+
+    {% block nav_list %}{% endblock %}
+</nav>
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    {% block sidebar_wrapper %}{% endblock %}
+
+    <!-- Page Content -->
+    {% block content %}{% endblock %}
+               
+</div>
+<!-- /#wrapper -->
+<!-- jQuery -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/sidebar_menu.js' %}"></script>
+</body>
+</html>
