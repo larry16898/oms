@@ -18,6 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('accounts.urls', namespace='accounts')),
     url(r'^api/clientdeploy/', include('clientdeploy.urls')),
+    url(r'^', include('accounts.urls', namespace='accounts')),
+
 ]
