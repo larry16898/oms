@@ -6,3 +6,4 @@ project/settings/pro.py
 manage.py
 .idea
 db.sqlite3
+static
